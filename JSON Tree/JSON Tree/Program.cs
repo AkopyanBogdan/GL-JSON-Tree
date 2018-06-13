@@ -25,6 +25,8 @@ namespace JSON_Tree
 
             if (fileSystemInfo.Attributes == FileAttributes.Directory)
             {
+                Size = GetDirectorySize(fileSystemInfo.FullName).ToString() + " B";
+
                 foreach (FileSystemInfo file in (fileSystemInfo as DirectoryInfo).GetFileSystemInfos())
                 {
                     Files.Add(new TreeItem(file));
@@ -36,6 +38,18 @@ namespace JSON_Tree
             }
         }
 
+        private long GetDirectorySize(string path)
+        {
+            string[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
+
+            long size = 0;
+            foreach (string name in files)
+            {
+                FileInfo info = new FileInfo(name);
+                size += info.Length;
+            }
+            return size;
+        }
 
     }
     class Program
