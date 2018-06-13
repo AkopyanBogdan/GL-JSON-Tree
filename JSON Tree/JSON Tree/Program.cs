@@ -13,11 +13,9 @@ namespace JSON_Tree
         public string Size { get; set; }
         public List<TreeItem> Files;
 
-
         public TreeItem(FileSystemInfo fileSystemInfo)
         {
             Files = new List<TreeItem>();
-
 
             Name = fileSystemInfo.Name;
             DateCreated = fileSystemInfo.CreationTime.ToString("d-MMM-yy h:mm tt");
