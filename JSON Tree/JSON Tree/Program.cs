@@ -60,7 +60,9 @@ namespace JSON_Tree
     {
         static void Main(string[] args)
         {
-
+            TreeItem tree = new TreeItem(new DirectoryInfo(@"D:\test"));
+            string result = tree.JsonToTree();
+            Console.WriteLine(result);
         }
     }
 }
