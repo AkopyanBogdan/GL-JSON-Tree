@@ -51,6 +51,10 @@ namespace JSON_Tree
             return size;
         }
 
+        public string JsonToTree()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
     }
     class Program
     {
