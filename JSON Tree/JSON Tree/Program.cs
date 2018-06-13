@@ -62,6 +62,7 @@ namespace JSON_Tree
             string result = tree.JsonToTree();
 
             Console.WriteLine(result);
+            Console.ReadKey();
         }
     }
 }
